@@ -102,7 +102,7 @@ if(searchRequest === ''){
     // const { images, isLoading, error, showModal, totalHits } = this.state;
     return (
       <>
-        <Searchbar onSearch={handleSearchSubmit} />
+        <Searchbar onSubmit={handleSearchSubmit} />
         {error && toast.error(`Whoops, something went wrong: ${error.message}`)}
           <ImageGallery images={images} handlePreview={showModalImage} />
         {isLoading && <Loader color={'#1dbc52'} size={32} />}
