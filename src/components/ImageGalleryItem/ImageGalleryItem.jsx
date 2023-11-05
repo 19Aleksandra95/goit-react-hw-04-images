@@ -1,23 +1,23 @@
+
+import React from 'react';
 import PropTypes from 'prop-types';
 import css from './ImageGalleryItem.module.css';
 
-const ImageGalleryItem = ({ smallImage, tags, onClick }) => {
-    return (
-      <li className={css.ImageGalleryItem}>
-        <img
-          className={css.ImageGalleryItem_image}
-          src={smallImage}
-          alt={tags}
-          onClick={onClick}
-        />
-      </li>
-    );
-  };
-  
-  ImageGalleryItem.propTypes = {
-    onClick: PropTypes.func.isRequired,
-    tags: PropTypes.string.isRequired,
-    smallImage: PropTypes.string.isRequired,
-  };
-  
-  export default ImageGalleryItem;
+export default function ImageGalleryItem({ webformatURL, index, openModal }) {
+  return (
+    <li className={css.ImageGalleryItem}>
+      <img
+        className={css.ImageGalleryItem__image}
+        src={webformatURL}
+        onClick={() => openModal(index)}
+        alt=""
+      />
+    </li>
+  );
+}
+
+ImageGalleryItem.propTypes = {
+  index: PropTypes.number.isRequired,
+  webformatURL: PropTypes.string.isRequired,
+  openModal: PropTypes.func.isRequired,
+};
