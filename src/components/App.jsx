@@ -50,7 +50,7 @@ if(searchRequest === ''){
 
   //   this.setState({ isLoading: true, error: null });
     useEffect(() => {
-    const getImg = () => {
+    const getImages = () => {
       setIsLoading(true);
       setError(null);
 
@@ -70,7 +70,7 @@ if(searchRequest === ''){
         });
     };
     if (!searchRequest) return;
-    getImg();
+    getImages();
   }, [galleryPage, searchRequest]);
 
   const handleSearchSubmit = searchRequest => {
