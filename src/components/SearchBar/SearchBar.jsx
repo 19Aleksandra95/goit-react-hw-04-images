@@ -8,8 +8,12 @@ import css from './SearchBar.module.css';
 const Searchbar = ({onSubmit}) => {
   const [searchRequest, setSearchRequest] = useState('');
 
-  const handleRequestChange = ({searchRequest}) => {
+  const handleRequestChange = event => {
+    event.preventDefault();
+
+   
     setSearchRequest(searchRequest);
+
   };
 
   const handleSubmit = event => {
