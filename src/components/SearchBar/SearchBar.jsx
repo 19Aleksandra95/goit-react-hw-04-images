@@ -5,7 +5,7 @@ import css from './SearchBar.module.css';
 
 
 
-const Searchbar = () => {
+const Searchbar = ({onSubmit}) => {
   const [searchRequest, setSearchRequest] = useState('');
 
   const handleRequestChange = ({searchRequest}) => {
@@ -15,7 +15,7 @@ const Searchbar = () => {
   const handleSubmit = event => {
     event.preventDefault();
 
-   
+    onSubmit(searchRequest)
     setSearchRequest('');
   };
 
